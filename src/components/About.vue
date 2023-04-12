@@ -1,0 +1,84 @@
+<template>
+    <section>
+        <div class="about">
+        <h2 class="name">I am {{info.name}}</h2>
+        <p>{{info.spec}}</p> 
+        <a class="scroll" href="#skills">{{info.scroll}}</a> 
+    </div>
+    <img src="../assets/$.png">
+    </section>
+</template>
+
+<script>
+export default {
+    props: {
+        info: {
+            type: Object,
+            required: true
+        }
+    }
+}
+</script>
+
+<style scoped>
+.about{
+        height: 724px;
+        overflow: hidden;
+        width:auto;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        padding-right: 570px;
+        max-height: 724px;
+    }
+    img{
+        max-width: 550px;
+        max-height: 723px;
+        width: 40%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-sizing: border-box;
+    }
+    section{
+        position: relative;
+        max-height: 724px;
+    }
+    .name{
+        margin: 200px 100px 100px 0;
+    }
+    .scroll{
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+        @media (max-width: 920px) {
+            img {
+                position: relative;
+                max-width: 288px;
+                max-height: 413px;
+                width:100%;
+                height: auto;
+
+            }
+            .about{
+                margin: 0;
+                padding: 10px 0;
+                height:auto;
+            }
+            section{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+            .scroll{
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .name{
+                margin: 15px 0;
+            }
+                
+            }
+</style>
