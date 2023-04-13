@@ -14,15 +14,9 @@
 </template>
 
 <script>
-import Button from './Button.vue';
-import Inputs from './Inputs.vue';
 
     export default {
         props:['buttonProps'],
-            components: {
-                Button,
-                Inputs
-            }
     }
 </script>
 

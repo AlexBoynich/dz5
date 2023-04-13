@@ -31,7 +31,7 @@ export default {
 .header6 {
     font-family: Rubik;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 22px;
     letter-spacing: 0px;
     text-align: left;

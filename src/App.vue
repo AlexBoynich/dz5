@@ -50,13 +50,6 @@ export default {
       ],
       footy: [
         {text:'Copyright © 2023. All rights reserved.'}
-      ],
-      buttonProps: [
-        {text: 'SEND'}
-      ],
-      Inputs: [
-        {type: 'text'},
-        {type: 'text'}
       ]
     }
   },

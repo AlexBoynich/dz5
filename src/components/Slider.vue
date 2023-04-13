@@ -5,14 +5,14 @@
         <div>
         <a>&lt</a>
                 <div id="items">
-                <img src="../assets/free-icon-instagram-2111463.png" class="item" alt="">
-                <img src="../assets/free-icon-odnoklassniki-3670250.png" class="item" alt="" >
-                <img src="../assets/free-icon-telegram-4401433.png" class="item" alt="">
-                <img src="../assets/free-icon-twitter-220375.png" class="item" alt="" >
-                <img src="../assets/free-icon-viber-3670059.png" class="item" alt="" >
-                <img src="../assets/free-icon-vkontakte-4494490.png" class="item" alt="" >
-                <img src="../assets/free-icon-whatsapp-4494494.png" class="item" alt="">
-                <img src="../assets/free-icon-youtube-4494485.png" class="item" alt="">
+                <img src="@/assets/free-icon-instagram-2111463.png" class="item" alt="">
+                <img src="@/assets/free-icon-odnoklassniki-3670250.png" class="item" alt="" >
+                <img src="@/assets/free-icon-telegram-4401433.png" class="item" alt="">
+                <img src="@/assets/free-icon-twitter-220375.png" class="item" alt="" >
+                <img src="@/assets/free-icon-viber-3670059.png" class="item" alt="" >
+                <img src="@/assets/free-icon-vkontakte-4494490.png" class="item" alt="" >
+                <img src="@/assets/free-icon-whatsapp-4494494.png" class="item" alt="">
+                <img src="@/assets/free-icon-youtube-4494485.png" class="item" alt="">
             </div>
         <a>></a>
          </div>

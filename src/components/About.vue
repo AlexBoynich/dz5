@@ -5,7 +5,7 @@
         <p>{{info.spec}}</p> 
         <a class="scroll" href="#skills">{{info.scroll}}</a> 
     </div>
-    <img src="../assets/$.png">
+    <img src="@/assets/$.png">
     </section>
 </template>
 

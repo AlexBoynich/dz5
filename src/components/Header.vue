@@ -1,7 +1,7 @@
 <template>
     <div class="header container">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <img class="burger" src="../assets/Burger.png" alt="">
+        <img alt="Vue logo" src="@/assets/logo.png">
+        <img class="burger" src="@/assets/Burger.png" alt="">
         <ul>
             <Navitem
             v-for="nav of navMenu"
