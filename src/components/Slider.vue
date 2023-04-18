@@ -1,71 +1,104 @@
 <template>
-    <section class="container">
-        <h2>My social networks</h2>
-    <p class="small-paragraph">There are many reasons to get down and start to get depressed about your situation. </p>
-        <div>
-        <a>&lt</a>
-                <div id="items">
-                <img src="@/assets/free-icon-instagram-2111463.png" class="item" alt="">
-                <img src="@/assets/free-icon-odnoklassniki-3670250.png" class="item" alt="" >
-                <img src="@/assets/free-icon-telegram-4401433.png" class="item" alt="">
-                <img src="@/assets/free-icon-twitter-220375.png" class="item" alt="" >
-                <img src="@/assets/free-icon-viber-3670059.png" class="item" alt="" >
-                <img src="@/assets/free-icon-vkontakte-4494490.png" class="item" alt="" >
-                <img src="@/assets/free-icon-whatsapp-4494494.png" class="item" alt="">
-                <img src="@/assets/free-icon-youtube-4494485.png" class="item" alt="">
-            </div>
-        <a>></a>
-         </div>
-    </section>
+    <div class="slider-wrapper">
+        <div class="arrow_left"><img src="@/assets/arrow.png"/></div>
+
+        <swiper class="swiper container" :options="swiperOption">
+            <swiper-slide
+                v-for="(slide, index) in slides"
+                :key="index"
+            >
+                <img :src="slide"/>
+            </swiper-slide>
+        </swiper>
+        
+        <div class="arrow_right"><img src="@/assets/arrow.png"/></div>
+    </div>
 </template>
 
 <script>
-export default{
-
-}
-
+    import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+    import 'swiper/css/swiper.css'
+    export default {
+        name: 'Slider',
+        components: {
+            Swiper,
+            SwiperSlide
+        },
+        data: () => {
+            return {
+                slides: [
+                    '@/assets/slider/1.png',
+                    '@/assets/slider/2.png',
+                    '@/assets/slider/3.png',
+                    '@/assets/slider/4.png',
+                    '@/assets/slider/5.png',
+                    '@/assets/slider/6.png',
+                ],
+            }
+        },
+        computed: {
+            swiperOption() {
+                return {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    slidesPerGroup: 3,
+                    loop: true,
+                    loopFillGroupWithBlank: true,
+                    navigation: {
+                        nextEl: '.arrow_right',
+                        prevEl: '.arrow_left'
+                    },
+                    breakpoints: {
+                        600: {
+                            slidesPerView: 3,
+                            spaceBetween: 20
+                        },
+                        1115: {
+                            slidesPerView: 6,
+                            spaceBetween: 20
+                        }
+                    }
+                }
+            }
+        },
+    }
 </script>
 
 <style scoped>
-    section {
+    .slider-wrapper {
+        padding: 0 20px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: space-between;
     }
-    img{
-        width:140px;
-        height:80px;
-        padding: 10px;
+    .swiper-button-prev {
+        left: 20px
     }
-    #items{
-        max-width:100%;
-        overflow: hidden;
-        display: flex;
-        margin-top: 20px;
+    .swiper-button-next {
+        right: 20px
     }
-    h2{
-        margin-top: 100px;
+    .swiper-button-next  img {
+        transform: rotate(180deg);
     }
-    p{
-        margin-top: 40px;
+    .swiper-button-prev, .swiper-button-next {
+        width: 48px;
+        height: 48px;
+        background: transparent;
     }
-    @media (max-width: 920px) {
-        .container{
-            padding-left:0;
-            padding-right: 0;
-        }
-        div{
-            max-width: 100%;
-            display: flex;
-            align-items: center;
-        }
-        h2{
-            margin-top:50px;
-        }
-        .items{
-            max-width:100px;
-            max-height: 100px;
-        }
+    .swiper-button-prev:after, .swiper-button-next:after {
+        content: none
+    }
+    .arrow_left, .arrow_right {
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        width: 48px;
+        height: 48px;
+    }
+    .arrow_right img {
+        transform: rotate(180deg);
+    }
+    .swiper-slide img {
+        width: 100%;
     }
 </style>

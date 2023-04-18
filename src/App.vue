@@ -10,9 +10,13 @@
     <Skills
     v-bind:summary="summary"
     />
-    <Slider/>
+    <SocialNetworks class="social-networks-block" id="social"/>
+    <LastPosts
+    v-bind:lastPosts="lastPosts"
+    />
     <ContactUs
     />
+  
     <Footer 
     v-for="foot of footy"
     v-bind:foot="foot"
@@ -26,7 +30,8 @@ import Skills from './components/Skills.vue';
 import About from './components/About.vue';
 import Footer from './components/Footer.vue';
 import ContactUs from './components/ContactUs.vue';
-import Slider from './components/Slider.vue';
+import SocialNetworks from './components/SocialNetworks.vue';
+import LastPosts from './components/LastPosts.vue';
 
 export default {
   name: 'App',
@@ -50,7 +55,12 @@ export default {
       ],
       footy: [
         {text:'Copyright © 2023. All rights reserved.'}
-      ]
+      ],
+      lastPosts: [
+                {title:'There are many reasons to get down', text: 'The only moment, the only life we have is in the NOW. What happened a few moments or several years ago is gone, what will happen this evening, or next month when we go on holidays is not here yet.', date: '10	Oct 21'},
+                {title:'Choosing The Right Path', text: 'Although this is well intentioned and the goal certainly is to reduce the quantity of these bothersome thoughts, the technique is inherently flawed. Requiring the individual to remember what not to think of infers that they have already thought it. It is akin to telling them to not think of a blue banana.', date: '58	Oct 20'},
+                {title:'Start your journey here', text: 'The only moment, the only life we have is in the NOW. What happened a few moments or several years ago is gone, what will happen this evening, or next month when we go on holidays is not here yet.', date: '29	Oct 18'}
+            ]
     }
   },
   components: {
@@ -59,7 +69,8 @@ export default {
     About,
     Footer,
     ContactUs,
-    Slider
+    SocialNetworks,
+    LastPosts
 
   }
 }
