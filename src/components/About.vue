@@ -1,10 +1,10 @@
 <template>
-    <section>
+    <section class="container">
         <div class="about">
-        <h2 class="name">I am {{info.name}}</h2>
-        <p>{{info.spec}}</p> 
-        <a class="scroll" href="#skills">{{info.scroll}}</a> 
-    </div>
+            <h2 class="name">I am {{info.name}}</h2>
+            <p>{{info.spec}}</p> 
+            <a class="scroll" href="#skills">{{info.scroll}}</a> 
+        </div>
     <img src="@/assets/$.png">
     </section>
 </template>
@@ -24,7 +24,6 @@ export default {
 .about{
         height: 724px;
         overflow: hidden;
-        width:auto;
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -41,6 +40,7 @@ export default {
         top: 0;
         right: 0;
         box-sizing: border-box;
+        object-fit: cover;
     }
     section{
         position: relative;

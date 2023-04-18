@@ -33,6 +33,7 @@ img {
 }
 a{
     float: right;
+    pointer-events: none;
 }
 .dateAndA{
     display: flex;
@@ -58,4 +59,36 @@ h4{
     padding: 20px;
     height: 270px;
 }
+@media (max-width: 920px) {
+    img{
+        width: 214px;
+        height: 218px;
+    }
+    .post{
+        display: flex;
+        flex-direction: column;
+        width: 214px;
+        align-items: center;
+    }
+    .dateAndA{
+        flex-direction: column;
+        align-items: start;
+    }
+    .postText{
+        width: 214px;
+
+    }
+    h4{
+        width: 214px;
+    }
+    .content{
+        height: auto;
+    }
+    a{
+        width: 100%;
+        text-align: end;
+    }
+}
+
+
 </style>

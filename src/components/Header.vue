@@ -44,7 +44,6 @@ img {
 
 @media (max-width: 920px) {
     .header{
-        padding: 0;
         position: relative;
         z-index: 2;
     }

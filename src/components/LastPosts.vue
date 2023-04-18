@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h2>Last posts</h2>
         <a href="#">All posts</a>
         <Post class="post"
@@ -31,6 +31,7 @@ a{
     display: flex;
     justify-content: end;
     margin-bottom: 40px;
+    pointer-events: none;
 }
 .post{
     margin: 25px auto;
