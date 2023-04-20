@@ -12,7 +12,7 @@
             v-for="nav of navMenu"
             v-bind:nav="nav"
             v-bind:menuIsShow="menuIsShow"
-            :key="$attrs"
+            v-on:toggleMenu="toggleMenu()"
             />
         </nav>
         </ul>
