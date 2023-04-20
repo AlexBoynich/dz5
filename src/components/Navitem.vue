@@ -3,7 +3,7 @@
        <a
         href="#"
         :href="nav.id"
-        @click='$emit("toggleMenu")'
+        @click='$emit("onNavClick")'
         >{{nav.title}}</a>
     </li>
 </template>
