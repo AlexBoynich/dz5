@@ -1,17 +1,17 @@
 <template>
     <div class="container">
-        <p>{{ foot.text }}</p>
+        <p>Copyright © {{ date }}. All rights reserved.</p>
     </div>
 </template>
 
 <script>
 export default {
-    props: {
-        foot: {
-            type: Object,
-            required: true
-        }
+    data: () => {
+        return {
+        date: new Date().getFullYear(),
     }
+    },
+
 }
 </script>
 

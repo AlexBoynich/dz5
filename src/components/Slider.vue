@@ -27,12 +27,12 @@
         data: () => {
             return {
                 slides: [
-                    '@/assets/slider/1.png',
-                    '@/assets/slider/2.png',
-                    '@/assets/slider/3.png',
-                    '@/assets/slider/4.png',
-                    '@/assets/slider/5.png',
-                    '@/assets/slider/6.png',
+                    '/1.png',
+                    '/2.png',
+                    '/3.png',
+                    '/4.png',
+                    '/5.png',
+                    '/6.png',
                 ],
             }
         },

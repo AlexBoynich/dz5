@@ -1,9 +1,9 @@
 <template>
     <section class="container">
         <div class="about">
-            <h2 class="name">I am {{info.name}}</h2>
-            <p>{{info.spec}}</p> 
-            <a class="scroll" href="#skills">{{info.scroll}}</a> 
+            <h2 class="name">I am {{name}}</h2>
+            <p>{{info}}</p> 
+            <a class="scroll" href="#skills">{{scroll}}</a> 
         </div>
     <img src="@/assets/$.png">
     </section>
@@ -11,10 +11,11 @@
 
 <script>
 export default {
-    props: {
-        info: {
-            type: Object,
-            required: true
+    data:() => {
+        return {
+            name: 'Alex',
+            info: 'frontend-developer',
+            scroll: 'Scroll to more',
         }
     }
 }

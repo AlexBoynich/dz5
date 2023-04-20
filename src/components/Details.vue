@@ -2,7 +2,7 @@
     <div>
         <div class="summary">
             <h2 class="header6">{{ sum.title }}</h2>
-            <p>{{ sum.p }}</p>
+            <p v-show="index==='activeIndex'">{{ sum.p }}</p>
         </div>
     </div>
 </template>
@@ -14,9 +14,14 @@ export default {
             type: Object,
             required: true
         }
+    },
+    methods: {
+
     }
 }
 </script>
+
+
 
 <style scoped>
 .summary {
@@ -35,8 +40,5 @@ export default {
     line-height: 22px;
     letter-spacing: 0px;
     text-align: left;
-}
-p{
-    display:none;
 }
 </style>

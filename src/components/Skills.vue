@@ -18,6 +18,8 @@ export default {
 }
 </script>
 
+
+
 <style scoped >
 #skills{
     margin-top: 100px;

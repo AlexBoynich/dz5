@@ -1,6 +1,10 @@
 <template>
     <li>
-       <a href="#">{{nav.title}}</a>
+       <a
+        href="#"
+        :href="nav.id"
+        @click='$emit("toggleMenu")'
+        >{{nav.title}}</a>
     </li>
 </template>
 
@@ -10,7 +14,14 @@ export default {
         nav: {
             type: Object,
             required: true
+        },
+    },
+    data() {
+        return {
+            menuIsShow: false,
         }
+    },
+    methods: {
     }
 }
 </script>
