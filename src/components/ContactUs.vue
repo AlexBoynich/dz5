@@ -4,10 +4,10 @@
         <p class="small-paragraph">Life is 10% what happens to you and 90% how you react to it. It does not matter how slowly you go as long as you do not stop. Confucius.</p>
         <form class="form">
             <div class="name-email">
-                <input class="name inputs" type="text" size="40" placeholder="Your name">
-                <input class="email inputs" type="text" size="40" placeholder="Email">
+                <input v-model.lazy="userName" class="name inputs" :class="{notValid: nameError}" type="text" size="40" placeholder="Your name">
+                <input v-model.lazy="userEmail" :class="{notValid: emailError}"  class="email inputs" type="text" size="40" placeholder="Email">
             </div>
-                <textarea class="description inputs" name="description" cols="40" rows="3" placeholder="Description (optional)"></textarea>
+                <textarea v-model.lazy="userDescription" :class="{notValid: descriptionError}" class="description inputs" name="description" cols="40" rows="3" placeholder="Description (optional)"></textarea>
                 <button class="button inputs">SEND</button>
             </form>
     </section>
@@ -17,10 +17,54 @@
 
     export default {
         props:['buttonProps'],
+        data () {
+            return {    
+                userName: '',
+                userEmail: '',
+                userDescription: '',
+                nameError: false,
+                emailError: false,
+                descriptionError: false,
+            }
+        },
+        methods: {
+        },
+        watch: {
+            userName: function(){
+                const validName = new RegExp('[^a-zA-Zа-яА-Я ]');
+                    if ((validName.test(this.userName)) || this.userName === ''){
+                        this.nameError = true
+                    } else {
+                        this.nameError = false
+                    }
+            },
+            userEmail: function(){
+                const validEmail = new RegExp('^((([0-9A-Za-z]{1}[-0-9A-z\\.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[-0-9А-я\\.]{0,30}[0-9А-Яа-я]?))@([-A-Za-z]{1,}\\.){1,}[-A-Za-z]{2,})$');
+                if ((validEmail.test(this.userEmail)) || this.userEmail === ''){
+                        this.emailError = false
+                    } else {
+                        this.emailError = true
+                    }
+            },
+            userDescription: function () {
+                const validDescription = new RegExp('привет');
+                if ((validDescription.test(this.userDescription)) || this.userDescription === ''){
+                    
+                    let arraysOfValidDesc = this.userDescription.split(validDescription);
+                    let validDesc = arraysOfValidDesc[0] + '*****' +  arraysOfValidDesc[1];
+                    this.userDescription = validDesc;
+                    } else {
+                        this.descriptionError = false
+                    }
+            }
+        }
     }
 </script>
 
 <style scoped>
+.notValid{
+    border: 1px solid red;
+}
 .form{
     display: flex;
     flex-direction: column;
