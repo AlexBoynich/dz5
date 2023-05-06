@@ -1,9 +1,9 @@
 <template>
     <div class="container">
-        <h2>Last posts</h2>
+        <h2>{{lastPosts.title}}</h2>
         <a href="#">All posts</a>
         <Post class="post"
-        v-for="post in lastPosts"
+        v-for="post in lastPosts.content"
         v-bind:post="post"
         v-key="post"
         />
@@ -12,6 +12,7 @@
 
 <script>
 import Post from './Post.vue';
+// import axios from 'axios';
 export default {
     props: ['lastPosts'],
     components: {
@@ -19,8 +20,24 @@ export default {
     },
     data () {
         return {
+            // data: [],
         }
-    }
+    },
+    // mounted() {
+    // axios 
+    // .get('/api/data.json') 
+    // .then((response) => {
+    //   this.data = response.data;
+    //   console.log(this.data.posts.title)
+    // })
+    // .catch(function (error) {
+    // // обработка ошибки
+    // console.log(error);
+    // })
+    // .finally(function () {
+    //     // выполняется всегда
+    // });
+    // },
 }
 
 </script>

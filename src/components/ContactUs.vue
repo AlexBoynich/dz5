@@ -8,13 +8,13 @@
                 <input v-model.lazy="userEmail" :class="{notValid: emailError}"  class="email inputs" type="text" size="40" placeholder="Email">
             </div>
                 <textarea v-model.lazy="userDescription" :class="{notValid: descriptionError}" class="description inputs" name="description" cols="40" rows="3" placeholder="Description (optional)"></textarea>
-                <button class="button inputs">SEND</button>
+                <button id="button" class="button inputs" @click="doPost()">SEND</button>
             </form>
     </section>
 </template>
 
 <script>
-
+    import axios from 'axios';
     export default {
         props:['buttonProps'],
         data () {
@@ -27,7 +27,21 @@
                 descriptionError: false,
             }
         },
-        methods: {
+        methods() {
+            doPost = () => {
+                axios 
+                .post('https://jsonplaceholder.typicode.com/users', { 
+                    firstName: this.userName,
+                    email: this.userEmail,
+                    description: this.userDescription,
+                })
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+            }
         },
         watch: {
             userName: function(){
@@ -112,6 +126,9 @@ button{
     margin-top: 30px;
     margin-bottom: 100px;
     border-radius: 4px;
+}
+button:hover{
+    cursor: pointer;
 }
 
 @media (max-width: 920px) {

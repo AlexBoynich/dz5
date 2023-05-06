@@ -3,7 +3,7 @@
         <img src="../assets/postImage.png" alt="">
         <div class='content'>
             <h4>{{ post.title }}</h4>
-            <p class="postText">{{ post.text }}</p>
+            <p class="postText">{{ post.description }}</p>
             <div class="dateAndA">
                 <p class="small-paragraph">{{ post.date }}</p>
                 <a href="#">READ MORE</a>
